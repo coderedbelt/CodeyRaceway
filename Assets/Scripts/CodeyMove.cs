@@ -33,4 +33,34 @@ public class CodeyMove : MonoBehaviour
         }
         
     }
+    /*void OnCollisionEnter(Collision other)
+    {
+        if (canMove)
+        {
+            float vertical = Input.GetAxis("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
+            Vector3 rotation = new Vector3(0, horizontal * _rotationSpeed * Time.deltaTime, 0);
+            move = transform.forward * Speed * Time.deltaTime * vertical + transform.up * 15 * Time.deltaTime * vertical;
+            transform.Rotate(rotation);
+            rb.AddForce(move, ForceMode.VelocityChange);
+
+            anim.SetBool("isRunning", move != Vector3.zero);
+        }
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        if (canMove)
+        {
+
+            float vertical = Input.GetAxis("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
+            Vector3 rotation = new Vector3(0, horizontal * _rotationSpeed * Time.deltaTime, 0);
+            move = transform.forward * Speed * Time.deltaTime * vertical;
+            transform.Rotate(rotation);
+            rb.AddForce(move, ForceMode.VelocityChange);
+
+            anim.SetBool("isRunning", move != Vector3.zero);
+        }
+    }*/
 }
