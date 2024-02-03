@@ -7,13 +7,28 @@ public class itemBoxSpawner : MonoBehaviour
     public GameObject itemBox;
 
     public int numberOfBoxes;
-    // Start is called before the first frame update
+
+    public int modifyXPosition;
+    public int modifyZPosition;
+  
     void Start()
     {
+        for(int i = 0; i < numberOfBoxes; i++)
+        {
+            GameObject itemBoxClone = Instantiate( 
+                itemBox, 
+                new Vector3(
+                    transform.position.x + modifyXPosition * i, 
+                    transform.position.y,
+                    transform.position.z + modifyZPosition * i
+                    ), 
+                transform.rotation);
+          
+        }
         
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
         

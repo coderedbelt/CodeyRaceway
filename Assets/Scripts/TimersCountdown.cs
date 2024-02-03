@@ -20,12 +20,12 @@ public class TimersCountdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalLapTime -= Time.deltaTime;
+        /*totalLapTime -= Time.deltaTime;
         totalCountdownTime -= Time.deltaTime;
 
         lapTime.text = Mathf.Round(totalLapTime).ToString();
         startCountdown.text = Mathf.Round(totalCountdownTime).ToString();
-        
+        */
         if(totalCountdownTime > 0)
         {
             totalCountdownTime -= Time.deltaTime;
@@ -36,7 +36,7 @@ public class TimersCountdown : MonoBehaviour
         {
             startCountdown.text = "";
             totalLapTime -= Time.deltaTime;
-            lapTime.text = totalLapTime.ToString();
+            lapTime.text = Mathf.Round(totalLapTime).ToString();
             cm.Speed = 2500f;
             if (totalLapTime < 0)
             {
