@@ -10,6 +10,7 @@ public class CodeyMove : MonoBehaviour
     public Vector3 move;
     public float _rotationSpeed = 50f;
     private Rigidbody rb;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -33,6 +34,20 @@ public class CodeyMove : MonoBehaviour
         }
         
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "itemBoxes")
+        {
+            other.gameObject.SetActive(false);
+            
+        }
+      
+    }
+
+
+   
+
     /*void OnCollisionEnter(Collision other)
     {
         if (canMove)

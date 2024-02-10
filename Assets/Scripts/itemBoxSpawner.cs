@@ -31,6 +31,6 @@ public class itemBoxSpawner : MonoBehaviour
  
     void Update()
     {
-        
+       
     }
 }
