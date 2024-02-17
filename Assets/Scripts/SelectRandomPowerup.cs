@@ -9,11 +9,15 @@ public class SelectRandomPowerup : MonoBehaviour
     public GameObject chosenPowerup;
 
     void Update()
+    //it needs to be a conditional statement causing codey to 
+    //decide wheter or not to spawn the powerup at his position
     {
-        
+        if(){
+
+        }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "itemBoxes")
         {
