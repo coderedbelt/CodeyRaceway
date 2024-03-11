@@ -11,10 +11,13 @@ public class TimersCountdown : MonoBehaviour
     public CodeyMove cm;
     public float totalLapTime;
     public float totalCountdownTime;
+    public GameObject gameOverCanvas;
     
     void Start()
     {
         cm = GameObject.Find("Codey").GetComponent<CodeyMove>();
+        gameOverCanvas.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -41,6 +44,8 @@ public class TimersCountdown : MonoBehaviour
             if (totalLapTime < 0)
             {
                 print("Time is Up");
+                gameOverCanvas.SetActive(true);
+                Time.timeScale = 0;
 
             }
         }

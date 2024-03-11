@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class TriggerFinishLine : MonoBehaviour
 {
+
     public CheckpointCounter checkpointTracker;
+    public GameObject YouWonCanvas;
+
+    void Start()
+    {
+        YouWonCanvas.SetActive(false);
+    }
+   
+
+    
 
     private void OnTriggerEnter (Collider other)
     {
@@ -13,6 +23,10 @@ public class TriggerFinishLine : MonoBehaviour
             if(checkpointTracker.triggeredCheckpoints == checkpointTracker.numberOfCheckpoints)
             {
                 print("You Win!");
+                YouWonCanvas.SetActive(true);
+                Time.timeScale = 0;
+
+
             }
             else
             {
