@@ -33,14 +33,15 @@ public class TimersCountdown : MonoBehaviour
         {
             totalCountdownTime -= Time.deltaTime;
            startCountdown.text = Mathf.Round(totalCountdownTime).ToString();
-            cm.Speed = 0f;
+            cm.canMove = false;
         }
         if(totalCountdownTime <= 0)
         {
             startCountdown.text = "";
             totalLapTime -= Time.deltaTime;
             lapTime.text = Mathf.Round(totalLapTime).ToString();
-            cm.Speed = 2500f;
+            cm.canMove = true;
+            
             if (totalLapTime < 0)
             {
                 print("Time is Up");

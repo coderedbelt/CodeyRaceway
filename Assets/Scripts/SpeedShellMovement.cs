@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class SpeedShellMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Player;
+   
+    // Update is called once per frame
     void Start()
     {
-        
+        Player = GameObject.Find("Codey");
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+           
+            Player.GetComponent<CodeyMove>().Speed = 1900;
+            Destroy(gameObject);
+        }
     }
+
+    
     
 }
 
